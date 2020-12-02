@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button button;
     TextView textView;
     CountDownTimer countDownTimer;
+    int countCorrectWords;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
