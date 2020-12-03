@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     CountDownTimer countDownTimer;
     int countCorrectWords;
+    boolean isDoneChallenge = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                         long min = (l / 60000) % 60;
                         long sec = (l / 1000) % 60;
                         textView.setText(f.format(hour) + ":" + f.format(min) + ":" + f.format(sec));
-                        if (sec == 3) {
+                        if (sec == 3 || isDoneChallenge) {
                             Toast.makeText(getApplicationContext(),"stop",Toast.LENGTH_SHORT).show();
                             cancel();
                         }
